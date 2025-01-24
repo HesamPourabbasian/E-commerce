@@ -5,7 +5,7 @@ import Ctitle from "./components/countdown/countdownTitle";
 import Footer from "./components/footer/footer";
 import Navbar from "./components/navbar/navbar";
 import Products from "./components/products/products";
-import Timeline from "./components/timeline /timeline";
+import Timeline from "./components/timeline/timeline"; // Fixed import path
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -28,9 +28,7 @@ export default function App() {
   };
 
   const removeFromCart = (productName) => {
-    setCart(
-      (prevCart) => prevCart.filter((item) => item.name !== productName) // Remove product by name
-    );
+    setCart((prevCart) => prevCart.filter((item) => item.name !== productName)); // Remove product by name
   };
 
   const toggleCart = () => {
@@ -79,7 +77,7 @@ export default function App() {
           </span>
         </div>
         <button
-          className="mt-4 btn btn-secondary"
+          className="mt-4 bg-blue-500 text-white p-2 rounded"
           onClick={toggleCart} // Close the cart
         >
           Close Cart
